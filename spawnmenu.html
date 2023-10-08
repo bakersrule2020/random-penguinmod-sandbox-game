@@ -51,16 +51,13 @@
 
     <!-- Menu container -->
     <div class="menu-container" id="menu">
-        <!-- Close button for the menu -->
-        <button class="spawn-button" onclick="toggleMenu()">Close Spawn Menu</button>
-
-        <!-- Menu items -->
-        <div class="menu-item">Item 1</div>
-        <div class="menu-item">Item 2</div>
-        <div class="menu-item">Item 3</div>
-        <div class="menu-item">Item 4</div>
-        <div class="menu-item">Item 5</div>
-        <div class="menu-item">Item 6</div>
+        <!-- Menu items with JavaScript function calls -->
+        <div class="menu-item" onclick="menuItemClicked(1)">Item 1</div>
+        <div class="menu-item" onclick="menuItemClicked(2)">Item 2</div>
+        <div class="menu-item" onclick="menuItemClicked(3)">Item 3</div>
+        <div class="menu-item" onclick="menuItemClicked(4)">Item 4</div>
+        <div class="menu-item" onclick="menuItemClicked(5)">Item 5</div>
+        <div class="menu-item" onclick="menuItemClicked(6)">Item 6</div>
     </div>
 
     <script>
@@ -75,6 +72,12 @@
                 menu.style.display = "grid";
                 spawnButton.innerText = "Close Spawn Menu";
             }
+        }
+
+        // Function to handle item button clicks
+        function menuItemClicked(itemNumber) {
+            // Replace this function with your custom logic for each item
+            alert("Item " + itemNumber + " clicked!");
         }
     </script>
 </body>
