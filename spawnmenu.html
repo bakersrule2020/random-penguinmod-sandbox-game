@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spawn Menu</title>
+    <title>Grid Spawn Menu</title>
     <style>
         /* Style for the spawn menu button */
         .spawn-button {
@@ -12,6 +12,7 @@
             padding: 10px 20px;
             border: none;
             cursor: pointer;
+            border-radius: 5px; /* Rounded corners */
         }
 
         /* Style for the menu container (initially hidden) */
@@ -19,15 +20,23 @@
             display: none;
             position: absolute;
             background-color: #fff;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
             z-index: 1;
+            /* Define the grid layout */
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* Three columns */
+            gap: 10px; /* Gap between grid items */
+            padding: 10px;
+            border-radius: 5px; /* Rounded corners */
         }
 
         /* Style for menu items */
         .menu-item {
-            padding: 10px;
             text-align: center;
+            padding: 10px;
             cursor: pointer;
+            border: 1px solid #ccc;
+            border-radius: 5px; /* Rounded corners */
         }
 
         /* Hover effect for menu items */
@@ -42,21 +51,29 @@
 
     <!-- Menu container -->
     <div class="menu-container" id="menu">
+        <!-- Close button for the menu -->
+        <button class="spawn-button" onclick="toggleMenu()">Close Spawn Menu</button>
+
         <!-- Menu items -->
         <div class="menu-item">Item 1</div>
         <div class="menu-item">Item 2</div>
         <div class="menu-item">Item 3</div>
         <div class="menu-item">Item 4</div>
+        <div class="menu-item">Item 5</div>
+        <div class="menu-item">Item 6</div>
     </div>
 
     <script>
         // Function to toggle the menu's visibility
         function toggleMenu() {
             var menu = document.getElementById("menu");
-            if (menu.style.display === "block") {
+            var spawnButton = document.getElementsByClassName("spawn-button")[0];
+            if (menu.style.display === "grid") {
                 menu.style.display = "none";
+                spawnButton.innerText = "Open Spawn Menu";
             } else {
-                menu.style.display = "block";
+                menu.style.display = "grid";
+                spawnButton.innerText = "Close Spawn Menu";
             }
         }
     </script>
