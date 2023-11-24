@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GMod Spawn Menu</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1b1b1b;
+            color: #ffffff;
+        }
+
+        #spawnMenu {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #2b2b2b;
+            border: 2px solid #555;
+            border-radius: 8px;
+            padding: 10px;
+            max-width: 400px;
+            width: 100%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            display: none;
+        }
+
+        .category {
+            margin-bottom: 10px;
+        }
+
+        .category h3 {
+            margin: 0;
+            padding: 5px;
+            background-color: #333;
+            border-radius: 4px;
+        }
+
+        .item {
+            display: flex;
+            align-items: center;
+            padding: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .item:hover {
+            background-color: #555;
+        }
+
+        .item img {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="spawnMenu">
+    <div class="category">
+        <h3>Weapons</h3>
+        <div class="item" onclick="spawnItem('pistol')">
+            <img src="pistol_icon.png" alt="Pistol">
+            Pistol
+        </div>
+        <div class="item" onclick="spawnItem('rifle')">
+            <img src="rifle_icon.png" alt="Rifle">
+            Rifle
+        </div>
+    </div>
+
+    <div class="category">
+        <h3>Props</h3>
+        <div class="item" onclick="spawnItem('crate')">
+            <img src="crate_icon.png" alt="Crate">
+            Crate
+        </div>
+        <div class="item" onclick="spawnItem('barrel')">
+            <img src="barrel_icon.png" alt="Barrel">
+            Barrel
+        </div>
+    </div>
+</div>
+
+<button onclick="toggleSpawnMenu()">Open Spawn Menu</button>
+
+<script>
+    function toggleSpawnMenu() {
+        var spawnMenu = document.getElementById('spawnMenu');
+        spawnMenu.style.display = (spawnMenu.style.display === 'none' || spawnMenu.style.display === '') ? 'block' : 'none';
+    }
+
+    function spawnItem(item) {
+        // Implement item spawning logic here
+        console.log('Spawned: ' + item);
+    }
+</script>
+
+</body>
+</html>
